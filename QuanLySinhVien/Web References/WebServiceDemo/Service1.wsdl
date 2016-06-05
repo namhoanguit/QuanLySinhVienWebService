@@ -149,6 +149,18 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="MonHoc_Them">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mamonhoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenmonhoc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sotiet" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MonHoc_ThemResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="MonHoc_Sua">
         <s:complexType>
           <s:sequence>
@@ -222,9 +234,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="masinhvien" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mamonhoc" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="lanthi" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="diem" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -297,7 +306,7 @@
       <s:element name="Khoa_TimTheoMaKhoa">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="mamonhoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="makhoa" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -488,6 +497,12 @@
   <wsdl:message name="TaoBangMonHocSoapOut">
     <wsdl:part name="parameters" element="tns:TaoBangMonHocResponse" />
   </wsdl:message>
+  <wsdl:message name="MonHoc_ThemSoapIn">
+    <wsdl:part name="parameters" element="tns:MonHoc_Them" />
+  </wsdl:message>
+  <wsdl:message name="MonHoc_ThemSoapOut">
+    <wsdl:part name="parameters" element="tns:MonHoc_ThemResponse" />
+  </wsdl:message>
   <wsdl:message name="MonHoc_SuaSoapIn">
     <wsdl:part name="parameters" element="tns:MonHoc_Sua" />
   </wsdl:message>
@@ -622,6 +637,10 @@
     <wsdl:operation name="TaoBangMonHoc">
       <wsdl:input message="tns:TaoBangMonHocSoapIn" />
       <wsdl:output message="tns:TaoBangMonHocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MonHoc_Them">
+      <wsdl:input message="tns:MonHoc_ThemSoapIn" />
+      <wsdl:output message="tns:MonHoc_ThemSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="MonHoc_Sua">
       <wsdl:input message="tns:MonHoc_SuaSoapIn" />
@@ -778,6 +797,15 @@
     </wsdl:operation>
     <wsdl:operation name="TaoBangMonHoc">
       <soap:operation soapAction="http://tempuri.org/TaoBangMonHoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonHoc_Them">
+      <soap:operation soapAction="http://tempuri.org/MonHoc_Them" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1015,6 +1043,15 @@
     </wsdl:operation>
     <wsdl:operation name="TaoBangMonHoc">
       <soap12:operation soapAction="http://tempuri.org/TaoBangMonHoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonHoc_Them">
+      <soap12:operation soapAction="http://tempuri.org/MonHoc_Them" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

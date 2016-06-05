@@ -112,11 +112,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmKetQua.resx">
+      <DependentUpon>frmKetQua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKhoa.resx">
+      <DependentUpon>frmKhoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSinhVien.resx">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKeLanThi.resx">
+      <DependentUpon>frmThongKeLanThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKeMonHoc.resx">
+      <DependentUpon>frmThongKeMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKeSVTheoKhoa.resx">
+      <DependentUpon>frmThongKeSVTheoKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTimKiemKQHTSinhVien.resx">
+      <DependentUpon>frmTimKiemKQHTSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTimKiemThongTinSV.resx">
+      <DependentUpon>frmTimKiemThongTinSV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonHoc.resx">
+      <DependentUpon>MonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

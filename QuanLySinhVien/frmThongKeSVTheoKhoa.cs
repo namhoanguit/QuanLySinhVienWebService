@@ -11,9 +11,38 @@ namespace QuanLySinhVien
 {
     public partial class frmThongKeSVTheoKhoa : Form
     {
+        QuanLySinhVien.WebServiceDemo.Service1 bien;
         public frmThongKeSVTheoKhoa()
         {
+            bien = new WebServiceDemo.Service1();
             InitializeComponent();
+        }
+
+        private void frmThongKeSVTheoKhoa_Load(object sender, EventArgs e)
+        {
+            bien.myconnect();
+            cbMakhoa.DataSource = bien.TaoBangKhoa("KHOA");
+            cbMakhoa.DisplayMember = "MAKHOA";
+            
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            bien.myClose();
+            this.Close();
+        }
+
+        private void cbMakhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //load dữ liệu từ combobox xuống textbox
+            DataTable d = bien.Khoa_TimTheoMaKhoa(cbMakhoa.Text);
+            foreach (DataRow hang in d.Rows)
+                txtTenKhoa.Text = hang["TENKHOA"].ToString();
+
+            //load dữ liệu lên DataGrid
+            dataGridViewTKSV.DataSource = bien.TaoBangTKKhoa(cbMakhoa.Text);
+            txtTongSV.Text = (dataGridViewTKSV.Rows.Count).ToString();
+
         }
     }
 }

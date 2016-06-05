@@ -38,7 +38,7 @@ namespace WebServiceQLSV
         public DataTable taobang (string QLSV)
         {
             con.Open();
-                string s;
+            string s;
             DataTable bang = new DataTable(QLSV);
             s = "SELECT MASV,HOSV,TENSV,GIOITINH,NGAYSINH,MAKHOA FROM "+ QLSV;
             SqlDataAdapter ds = new SqlDataAdapter(s, con);
@@ -77,13 +77,13 @@ namespace WebServiceQLSV
         ////////////////=========== KHOA=======================
 
         [WebMethod]
-        public DataTable TaoBangKhoa(String QLSV)
+        public DataTable TaoBangKhoa(string QLSV)
         {
             con.Open();
             string s;
             DataTable bangkhoa = new DataTable(QLSV);
-            s = "SELECT MAKHOA ,TENKHOA " + QLSV;
-            SqlDataAdapter ds = new SqlDataAdapter(s, con);
+            s = "SELECT MAKHOA,TENKHOA FROM " + QLSV;
+            SqlDataAdapter ds = new SqlDataAdapter(s,con);
             ds.Fill(bangkhoa);
             return bangkhoa;
         }
@@ -117,17 +117,17 @@ namespace WebServiceQLSV
 
         ////////////////=========== MON HOC =======================
         [WebMethod]
-        public DataTable TaoBangMonHoc(String QLSV)
+        public DataTable TaoBangMonHoc(string QLSV)
         {
             con.Open();
             string s;
             DataTable bangmonhoc = new DataTable(QLSV);
-            s = "SELECT * FORM MONHOC " + QLSV;
+            s = "SELECT MAMH,TENMH,SOTIET FROM " + QLSV;
             SqlDataAdapter ds = new SqlDataAdapter(s, con);
             ds.Fill(bangmonhoc);
             return bangmonhoc;
         }
-
+        [WebMethod]
         public void MonHoc_Them(string mamonhoc,string tenmonhoc,int sotiet)
         {
             con.Open();
@@ -190,7 +190,7 @@ namespace WebServiceQLSV
         }
 
         [WebMethod]
-        public void KetQua_Xoa(string masinhvien, string mamonhoc, int lanthi, int diem)
+        public void KetQua_Xoa(string masinhvien)
         {
             con.Open();
             string s = "DELETE FROM KETQUA WHERE MASV '" + masinhvien + "'";
@@ -233,7 +233,7 @@ namespace WebServiceQLSV
             con.Open();
             string s;
             DataTable dt = new DataTable(makhoa);
-            s = "SELECT MASV,HOSV,TENSV,NGAYSINH FROM SINHVIEN ,KHOA" +
+            s = "SELECT MASV,HOSV,TENSV,NGAYSINH FROM SINHVIEN,KHOA " +
                 "WHERE SINHVIEN.MAKHOA = KHOA.MAKHOA AND (KHOA.MAKHOA ='" + makhoa+ "')";
             SqlDataAdapter ds = new SqlDataAdapter(s, con);
             ds.Fill(dt);
@@ -241,12 +241,12 @@ namespace WebServiceQLSV
         }
 
 
-           [WebMethod]
-        public DataTable Khoa_TimTheoMaKhoa(string mamonhoc)
+        [WebMethod]
+        public DataTable Khoa_TimTheoMaKhoa(string makhoa)
         {
             con.Open();
-            string s = "SELECT * FROM KHOA FROM MAKHOA ='" + mamonhoc + "'";
-            DataTable dt = new DataTable(mamonhoc);
+            string s = "SELECT * FROM KHOA WHERE MAKHOA ='" + makhoa + "'";
+            DataTable dt = new DataTable(makhoa);
             SqlDataAdapter ds = new SqlDataAdapter(s, con);
             ds.Fill(dt);
             return dt;

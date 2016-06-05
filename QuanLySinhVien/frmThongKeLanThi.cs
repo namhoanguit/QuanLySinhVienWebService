@@ -11,9 +11,38 @@ namespace QuanLySinhVien
 {
     public partial class frmThongKeLanThi : Form
     {
+        QuanLySinhVien.WebServiceDemo.Service1 bien;
         public frmThongKeLanThi()
         {
+            bien = new WebServiceDemo.Service1();
             InitializeComponent();
         }
+
+        private void frmThongKeLanThi_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bien.myClose();
+            this.Close();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            int i = 1;
+            dataGridViewLT.DataSource = bien.TaoBangTKLanThi(i.ToString());
+            txtTong.Text = (dataGridViewLT.Rows.Count).ToString();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            int i = 1;
+            dataGridViewLT.DataSource = bien.TaoBangTKLanThi(i.ToString());
+            txtTong.Text = (dataGridViewLT.Rows.Count).ToString();
+        }
+        
     }
 }

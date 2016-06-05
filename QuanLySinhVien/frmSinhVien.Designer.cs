@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,8 +39,6 @@
             this.txtTenSv = new System.Windows.Forms.TextBox();
             this.txtMaKhoa = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-          //  this.quanLySinhVienDataSet = new QuanLySinhVien.QuanLySinhVienDataSet();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -49,16 +46,8 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.dateNgaySinh = new System.Windows.Forms.DateTimePicker();
-        //    this.sINHVIENTableAdapter = new QuanLySinhVien.QuanLySinhVienDataSetTableAdapters.SINHVIENTableAdapter();
             this.txtGioiTinh = new System.Windows.Forms.ComboBox();
-            this.maSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioiTinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaySinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
-          //  ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMaSV
@@ -145,30 +134,12 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maSVDataGridViewTextBoxColumn,
-            this.hoSVDataGridViewTextBoxColumn,
-            this.tenSVDataGridViewTextBoxColumn,
-            this.gioiTinhDataGridViewTextBoxColumn,
-            this.ngaySinhDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.sINHVIENBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(42, 142);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(535, 150);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // sINHVIENBindingSource
-            // 
-            this.sINHVIENBindingSource.DataMember = "SINHVIEN";
-          //  this.sINHVIENBindingSource.DataSource = this.quanLySinhVienDataSet;
-            // 
-            // quanLySinhVienDataSet
-            // 
-           // this.quanLySinhVienDataSet.DataSetName = "QuanLySinhVienDataSet";
-           // this.quanLySinhVienDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnThem
             // 
@@ -232,14 +203,11 @@
             // 
             // dateNgaySinh
             // 
+            this.dateNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateNgaySinh.Location = new System.Drawing.Point(119, 99);
             this.dateNgaySinh.Name = "dateNgaySinh";
             this.dateNgaySinh.Size = new System.Drawing.Size(100, 20);
             this.dateNgaySinh.TabIndex = 18;
-            // 
-            // sINHVIENTableAdapter
-            // 
-         //   this.sINHVIENTableAdapter.ClearBeforeFill = true;
             // 
             // txtGioiTinh
             // 
@@ -251,37 +219,6 @@
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.Size = new System.Drawing.Size(121, 21);
             this.txtGioiTinh.TabIndex = 19;
-            // 
-            // maSVDataGridViewTextBoxColumn
-            // 
-            this.maSVDataGridViewTextBoxColumn.DataPropertyName = "MaSV";
-            this.maSVDataGridViewTextBoxColumn.HeaderText = "Mã SV";
-            this.maSVDataGridViewTextBoxColumn.Name = "maSVDataGridViewTextBoxColumn";
-            this.maSVDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hoSVDataGridViewTextBoxColumn
-            // 
-            this.hoSVDataGridViewTextBoxColumn.DataPropertyName = "HoSV";
-            this.hoSVDataGridViewTextBoxColumn.HeaderText = "Họ SV";
-            this.hoSVDataGridViewTextBoxColumn.Name = "hoSVDataGridViewTextBoxColumn";
-            // 
-            // tenSVDataGridViewTextBoxColumn
-            // 
-            this.tenSVDataGridViewTextBoxColumn.DataPropertyName = "TenSV";
-            this.tenSVDataGridViewTextBoxColumn.HeaderText = "Tên SV";
-            this.tenSVDataGridViewTextBoxColumn.Name = "tenSVDataGridViewTextBoxColumn";
-            // 
-            // gioiTinhDataGridViewTextBoxColumn
-            // 
-            this.gioiTinhDataGridViewTextBoxColumn.DataPropertyName = "GioiTinh";
-            this.gioiTinhDataGridViewTextBoxColumn.HeaderText = "Giới Tính";
-            this.gioiTinhDataGridViewTextBoxColumn.Name = "gioiTinhDataGridViewTextBoxColumn";
-            // 
-            // ngaySinhDataGridViewTextBoxColumn
-            // 
-            this.ngaySinhDataGridViewTextBoxColumn.DataPropertyName = "NgaySinh";
-            this.ngaySinhDataGridViewTextBoxColumn.HeaderText = "Ngày Sinh";
-            this.ngaySinhDataGridViewTextBoxColumn.Name = "ngaySinhDataGridViewTextBoxColumn";
             // 
             // frmSinhVien
             // 
@@ -311,8 +248,6 @@
             this.Text = "Sinh Viên";
             this.Load += new System.EventHandler(this.frmSinhVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
-           // ((System.ComponentModel.ISupportInitialize)(this.quanLySinhVienDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,8 +273,7 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.DateTimePicker dateNgaySinh;
-      //  private QuanLySinhVienDataSet quanLySinhVienDataSet;
-        private System.Windows.Forms.BindingSource sINHVIENBindingSource;
+        //  private QuanLySinhVienDataSet quanLySinhVienDataSet;
        // private QuanLySinhVienDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
         private System.Windows.Forms.ComboBox txtGioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn maSVDataGridViewTextBoxColumn;

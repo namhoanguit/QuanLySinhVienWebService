@@ -28,11 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTong = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.dataGridViewLT = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLT)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(283, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Tổng";
+            // 
+            // txtTong
+            // 
+            this.txtTong.Location = new System.Drawing.Point(347, 30);
+            this.txtTong.Name = "txtTong";
+            this.txtTong.Size = new System.Drawing.Size(100, 20);
+            this.txtTong.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(488, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Thoát";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(29, 35);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(70, 17);
+            this.radioButton1.TabIndex = 5;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Lần Thi 1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(137, 37);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(70, 17);
+            this.radioButton2.TabIndex = 6;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Lần Thi 2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // dataGridViewLT
+            // 
+            this.dataGridViewLT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLT.Location = new System.Drawing.Point(29, 92);
+            this.dataGridViewLT.Name = "dataGridViewLT";
+            this.dataGridViewLT.Size = new System.Drawing.Size(549, 206);
+            this.dataGridViewLT.TabIndex = 7;
+            // 
+            // frmThongKeLanThi
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(590, 337);
+            this.Controls.Add(this.dataGridViewLT);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtTong);
+            this.Controls.Add(this.label3);
+            this.Name = "frmThongKeLanThi";
             this.Text = "frmThongKeLanThi";
+            this.Load += new System.EventHandler(this.frmThongKeLanThi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLT)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTong;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.DataGridView dataGridViewLT;
+
     }
 }

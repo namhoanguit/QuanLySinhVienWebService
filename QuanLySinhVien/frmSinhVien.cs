@@ -173,8 +173,8 @@ namespace QuanLySinhVien
             {
 
                 DataTable dt = new DataTable();       
-                DateTime NgaySing = dateNgaySinh.Value;
-                bien.SinhVien_Sua(txtMaSV.Text, txtHoSv.Text, txtTenSv.Text, NgaySing,txtGioiTinh.Text, txtMaKhoa.Text);
+                DateTime NgaySinh = dateNgaySinh.Value;
+                bien.SinhVien_Sua(txtMaSV.Text, txtHoSv.Text, txtTenSv.Text, NgaySinh,txtGioiTinh.Text, txtMaKhoa.Text);
                 LoadDuLieu();
                 txtMaSV.ResetText();
                 txtMaKhoa.ResetText();

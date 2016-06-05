@@ -52,6 +52,8 @@ namespace QuanLySinhVien.WebServiceDemo {
         
         private System.Threading.SendOrPostCallback TaoBangMonHocOperationCompleted;
         
+        private System.Threading.SendOrPostCallback MonHoc_ThemOperationCompleted;
+        
         private System.Threading.SendOrPostCallback MonHoc_SuaOperationCompleted;
         
         private System.Threading.SendOrPostCallback MonHoc_XoaOperationCompleted;
@@ -152,6 +154,9 @@ namespace QuanLySinhVien.WebServiceDemo {
         
         /// <remarks/>
         public event TaoBangMonHocCompletedEventHandler TaoBangMonHocCompleted;
+        
+        /// <remarks/>
+        public event MonHoc_ThemCompletedEventHandler MonHoc_ThemCompleted;
         
         /// <remarks/>
         public event MonHoc_SuaCompletedEventHandler MonHoc_SuaCompleted;
@@ -530,6 +535,38 @@ namespace QuanLySinhVien.WebServiceDemo {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/MonHoc_Them", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void MonHoc_Them(string mamonhoc, string tenmonhoc, int sotiet) {
+            this.Invoke("MonHoc_Them", new object[] {
+                        mamonhoc,
+                        tenmonhoc,
+                        sotiet});
+        }
+        
+        /// <remarks/>
+        public void MonHoc_ThemAsync(string mamonhoc, string tenmonhoc, int sotiet) {
+            this.MonHoc_ThemAsync(mamonhoc, tenmonhoc, sotiet, null);
+        }
+        
+        /// <remarks/>
+        public void MonHoc_ThemAsync(string mamonhoc, string tenmonhoc, int sotiet, object userState) {
+            if ((this.MonHoc_ThemOperationCompleted == null)) {
+                this.MonHoc_ThemOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMonHoc_ThemOperationCompleted);
+            }
+            this.InvokeAsync("MonHoc_Them", new object[] {
+                        mamonhoc,
+                        tenmonhoc,
+                        sotiet}, this.MonHoc_ThemOperationCompleted, userState);
+        }
+        
+        private void OnMonHoc_ThemOperationCompleted(object arg) {
+            if ((this.MonHoc_ThemCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.MonHoc_ThemCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/MonHoc_Sua", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public void MonHoc_Sua(string mamonhoc, string tenmonhoc, int sotiet) {
             this.Invoke("MonHoc_Sua", new object[] {
@@ -688,29 +725,23 @@ namespace QuanLySinhVien.WebServiceDemo {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/KetQua_Xoa", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void KetQua_Xoa(string masinhvien, string mamonhoc, int lanthi, int diem) {
+        public void KetQua_Xoa(string masinhvien) {
             this.Invoke("KetQua_Xoa", new object[] {
-                        masinhvien,
-                        mamonhoc,
-                        lanthi,
-                        diem});
+                        masinhvien});
         }
         
         /// <remarks/>
-        public void KetQua_XoaAsync(string masinhvien, string mamonhoc, int lanthi, int diem) {
-            this.KetQua_XoaAsync(masinhvien, mamonhoc, lanthi, diem, null);
+        public void KetQua_XoaAsync(string masinhvien) {
+            this.KetQua_XoaAsync(masinhvien, null);
         }
         
         /// <remarks/>
-        public void KetQua_XoaAsync(string masinhvien, string mamonhoc, int lanthi, int diem, object userState) {
+        public void KetQua_XoaAsync(string masinhvien, object userState) {
             if ((this.KetQua_XoaOperationCompleted == null)) {
                 this.KetQua_XoaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnKetQua_XoaOperationCompleted);
             }
             this.InvokeAsync("KetQua_Xoa", new object[] {
-                        masinhvien,
-                        mamonhoc,
-                        lanthi,
-                        diem}, this.KetQua_XoaOperationCompleted, userState);
+                        masinhvien}, this.KetQua_XoaOperationCompleted, userState);
         }
         
         private void OnKetQua_XoaOperationCompleted(object arg) {
@@ -809,24 +840,24 @@ namespace QuanLySinhVien.WebServiceDemo {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Khoa_TimTheoMaKhoa", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable Khoa_TimTheoMaKhoa(string mamonhoc) {
+        public System.Data.DataTable Khoa_TimTheoMaKhoa(string makhoa) {
             object[] results = this.Invoke("Khoa_TimTheoMaKhoa", new object[] {
-                        mamonhoc});
+                        makhoa});
             return ((System.Data.DataTable)(results[0]));
         }
         
         /// <remarks/>
-        public void Khoa_TimTheoMaKhoaAsync(string mamonhoc) {
-            this.Khoa_TimTheoMaKhoaAsync(mamonhoc, null);
+        public void Khoa_TimTheoMaKhoaAsync(string makhoa) {
+            this.Khoa_TimTheoMaKhoaAsync(makhoa, null);
         }
         
         /// <remarks/>
-        public void Khoa_TimTheoMaKhoaAsync(string mamonhoc, object userState) {
+        public void Khoa_TimTheoMaKhoaAsync(string makhoa, object userState) {
             if ((this.Khoa_TimTheoMaKhoaOperationCompleted == null)) {
                 this.Khoa_TimTheoMaKhoaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnKhoa_TimTheoMaKhoaOperationCompleted);
             }
             this.InvokeAsync("Khoa_TimTheoMaKhoa", new object[] {
-                        mamonhoc}, this.Khoa_TimTheoMaKhoaOperationCompleted, userState);
+                        makhoa}, this.Khoa_TimTheoMaKhoaOperationCompleted, userState);
         }
         
         private void OnKhoa_TimTheoMaKhoaOperationCompleted(object arg) {
@@ -1109,6 +1140,10 @@ namespace QuanLySinhVien.WebServiceDemo {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void MonHoc_ThemCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
