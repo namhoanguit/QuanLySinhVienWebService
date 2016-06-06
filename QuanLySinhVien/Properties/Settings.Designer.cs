@@ -32,15 +32,5 @@ namespace QuanLySinhVien.Properties {
                 return ((string)(this["QuanLySinhVienConnectionString"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:49543/Service1.asmx")]
-        public string QuanLySinhVien_WebServiceDemo_Service1 {
-            get {
-                return ((string)(this["QuanLySinhVien_WebServiceDemo_Service1"]));
-            }
-        }
     }
 }

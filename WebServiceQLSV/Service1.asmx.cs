@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Web.Services.Protocols;
 using System.Data;
+using System.Configuration;
 
 namespace WebServiceQLSV
 {
@@ -20,8 +21,8 @@ namespace WebServiceQLSV
     // [System.Web.Script.Services.ScriptService]
     public class Service1 : System.Web.Services.WebService
     {
-        public SqlConnection con = new SqlConnection("Data Source=HOANGNAM-PC;Initial Catalog=QuanLySinhVien;Integrated Security=True");
-
+        public SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["QLSinhVien"].ConnectionString);
+        
 
         [WebMethod]
        public void myClose()
@@ -320,6 +321,7 @@ namespace WebServiceQLSV
             ds.Fill(dt);
             return dt;
         }
-
+        ////////////////===========TIM KIEM KET QUA HOC TAP =======================
+        
     }
 }

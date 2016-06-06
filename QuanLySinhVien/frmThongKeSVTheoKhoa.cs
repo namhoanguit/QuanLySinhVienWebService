@@ -11,10 +11,10 @@ namespace QuanLySinhVien
 {
     public partial class frmThongKeSVTheoKhoa : Form
     {
-        QuanLySinhVien.WebServiceDemo.Service1 bien;
+        QuanLySinhVien.QLSinhVien.Service1SoapClient bien;
         public frmThongKeSVTheoKhoa()
         {
-            bien = new WebServiceDemo.Service1();
+            bien = new QLSinhVien.Service1SoapClient();
             InitializeComponent();
         }
 

@@ -11,15 +11,16 @@ namespace QuanLySinhVien
 {
     public partial class frmKetQua : Form
     {
-        QuanLySinhVien.WebServiceDemo.Service1 bien;
+        QuanLySinhVien.QLSinhVien.Service1SoapClient bien;
+        //QuanLySinhVien.WebServiceDemo.Service1 bien;
         public frmKetQua()
         {
-            bien = new WebServiceDemo.Service1();
+            bien = new QLSinhVien.Service1SoapClient();
             InitializeComponent();
         }
         public void LoadDuLieu()
         {
-            dataGridViewKetQua.DataSource = bien.TaoBangKQ("KETQUATHI");
+            dataGridViewKetQua.DataSource = bien.TaoBangKQ("KETQUA");
         }
         private void frmKetQua_Load(object sender, EventArgs e)
         {
